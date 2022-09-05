@@ -1,6 +1,8 @@
 import "./App.css";
 
 function App() {
+  let IMG =
+    "https://res.cloudinary.com/isreal/image/upload/v1662406057/My%20portfolio%20Project/WhatsApp_Image_2022-09-05_at_6.51.51_PM_bta3uc.jpg";
   return (
     <div className="App">
       <div className="iv-card">
@@ -43,7 +45,9 @@ function App() {
               <input type="text" placeholder="Enter Spouse Name" />
             </div>
 
-            <button type="submit">SUBMIT</button>
+            <button type="submit" className="submit-btn">
+              SUBMIT
+            </button>
           </form>
         </div>
       </div>

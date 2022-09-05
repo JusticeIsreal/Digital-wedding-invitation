@@ -75,16 +75,13 @@ $special-Color: #4c5eff;
 .App {
   // border: 2px solid red;
   height: 100vh;
-  padding: 10px;
+  padding: 10px 20px;
   .iv-card {
-    // border: 2px solid red;
     height: 100%;
-    background: url("https://res.cloudinary.com/isreal/image/upload/v1662406057/My%20portfolio%20Project/WhatsApp_Image_2022-09-05_at_6.51.51_PM_bta3uc.jpg");
+    background-image: url("https://res.cloudinary.com/isreal/image/upload/v1662406057/My%20portfolio%20Project/WhatsApp_Image_2022-09-05_at_6.51.51_PM_bta3uc.jpg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center center;
     background-size: contain;
-    position: relative;
 
     .pick-table {
       position: absolute;
@@ -94,17 +91,19 @@ $special-Color: #4c5eff;
       margin-right: auto;
       left: 0;
       right: 0;
-      top: 0px;
+      bottom: 20px;
       animation: bounce 4s linear infinite;
 
       button {
         width: 100%;
         height: 100%;
-        border-radius: 10px;
+        border-radius: 5px;
         border: none;
-        background-color: whitesmoke;
+        background-color: goldenrod;
         font-size: 20px;
         font-weight: 900;
+        color: rgb(0, 0, 0);
+        border: 2px solid rgb(254, 237, 194);
       }
 
       @include responsive(bigphone) {
@@ -173,6 +172,17 @@ $special-Color: #4c5eff;
         @include responsive(bigphone) {
           width: 100%;
         }
+      }
+      .submit-btn {
+        margin-top: 20px;
+        width: 250px;
+        height: 35px;
+        border-radius: 5px;
+        background-color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: 900;
+        color: goldenrod;
+        border: 1px solid goldenrod;
       }
     }
   }
