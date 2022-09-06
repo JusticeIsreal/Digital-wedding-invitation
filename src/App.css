@@ -58,6 +58,11 @@ body {
   color: rgb(0, 0, 0);
   border: 2px solid rgb(254, 237, 194);
 }
+.App .iv-card .pick-table button:hover {
+  background-color: rgb(0, 0, 0);
+  color: goldenrod;
+  border: 1px solid goldenrod;
+}
 @media only screen and (min-width: 750px) {
   .App .iv-card .pick-table {
     width: 200px;
@@ -130,6 +135,18 @@ body {
   padding: 10px;
   width: 100%;
   border-radius: 10px;
+  position: relative;
+}
+.App .iv-card .form form .cancel {
+  color: goldenrod;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  font-size: 30px;
+  border-radius: 50%;
 }
 .App .iv-card .form form div {
   margin: 20px;
@@ -165,5 +182,10 @@ body {
   font-size: 20px;
   font-weight: 900;
   color: goldenrod;
+  border: 1px solid goldenrod;
+}
+.App .iv-card .form .submit-btn:hover {
+  background-color: goldenrod;
+  color: rgb(0, 0, 0);
   border: 1px solid goldenrod;
 }/*# sourceMappingURL=App.css.map */

@@ -104,6 +104,12 @@ $special-Color: #4c5eff;
         font-weight: 900;
         color: rgb(0, 0, 0);
         border: 2px solid rgb(254, 237, 194);
+
+        &:hover {
+          background-color: rgb(0, 0, 0);
+          color: goldenrod;
+          border: 1px solid goldenrod;
+        }
       }
 
       @include responsive(bigphone) {
@@ -150,7 +156,20 @@ $special-Color: #4c5eff;
         padding: 10px;
         width: 100%;
         border-radius: 10px;
+        position: relative;
 
+        .cancel {
+          color: goldenrod;
+          position: absolute;
+          top: -30px;
+          right: -30px;
+          width: 40px;
+          height: 40px;
+          background-color: black;
+          font-size: 30px;
+          border-radius: 50%;
+          // border: 2px solid red;
+        }
         div {
           margin: 20px;
           width: 300px;
@@ -183,6 +202,12 @@ $special-Color: #4c5eff;
         font-weight: 900;
         color: goldenrod;
         border: 1px solid goldenrod;
+
+        &:hover {
+          background-color: goldenrod;
+          color: rgb(0, 0, 0);
+          border: 1px solid goldenrod;
+        }
       }
     }
   }
