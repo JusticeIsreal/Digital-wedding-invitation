@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 *::-webkit-scrollbar {
@@ -194,4 +194,39 @@ body {
   background-color: goldenrod;
   color: rgb(0, 0, 0);
   border: 1px solid goldenrod;
+}
+.App .dynamicPage-container {
+  border: 5px solid goldenrod;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 0;
+  border-radius: 20px;
+}
+.App .dynamicPage-container .dynamicimg {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.App .dynamicPage-container .dynamicimg img {
+  width: 100%;
+}
+.App .dynamicPage-container .thanks-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.App .dynamicPage-container .thanks-message p {
+  margin: 10px;
+}
+.App .dynamicPage-container .thanks-message .barcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.App .dynamicPage-container .thanks-message .barcode img {
+  width: 30%;
 }/*# sourceMappingURL=App.css.map */

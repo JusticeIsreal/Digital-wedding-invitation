@@ -13,7 +13,7 @@
 body {
   //   max-width: 1700px;
   //   max-height: 1500px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 *::-webkit-scrollbar {
@@ -211,6 +211,41 @@ $special-Color: #4c5eff;
           background-color: goldenrod;
           color: rgb(0, 0, 0);
           border: 1px solid goldenrod;
+        }
+      }
+    }
+  }
+
+  .dynamicPage-container {
+    border: 5px solid goldenrod;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-radius: 20px;
+
+    .dynamicimg {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        // border: 2px solid red;
+      }
+    }
+    .thanks-message {
+      @include flexDisplay(center, center, column);
+
+      p {
+        margin: 10px;
+      }
+      .barcode {
+        @include flexDisplay(center, center, column);
+        width: 100%;
+
+        img {
+          width: 30%;
         }
       }
     }
