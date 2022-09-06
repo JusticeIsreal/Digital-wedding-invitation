@@ -4,6 +4,11 @@ import { createContext, useReducer } from "react";
 const AppContext = createContext();
 const initialState = {
   formshow: false,
+  togglebtn: true,
+  name: "",
+  Pnumber: "",
+  attend: "",
+  spouse: " ",
 };
 export const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -12,8 +17,13 @@ export const AppContextProvider = ({ children }) => {
   const showFrom = () => {
     dispatch({ type: "FORMTOGGLE" });
   };
+
+  // submit form function
+  const submitForm = () => {
+    dispatch({ type: "POST" });
+  };
   return (
-    <AppContext.Provider value={{ ...state, showFrom }}>
+    <AppContext.Provider value={{ ...state, showFrom, submitForm }}>
       {children}
     </AppContext.Provider>
   );
