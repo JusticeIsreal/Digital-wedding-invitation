@@ -172,6 +172,7 @@ body {
   height: 40px;
   border-radius: 5px;
   padding: 0 10px;
+  border: 1px solid goldenrod;
 }
 @media only screen and (min-width: 750px) {
   .App .iv-card .form form {
