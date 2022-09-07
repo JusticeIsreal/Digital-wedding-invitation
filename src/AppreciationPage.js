@@ -14,12 +14,16 @@ function AppreciationPage() {
 
   const saveIv = () => {
     html2canvas(document.body).then((canvas) => {
-      var newFile = document.createElement("newFile");
-      newFile.href = canvas
-        .toDataURL("..assets/images/jpeg")
-        .replace("image/jpeg", "image/octet-stream");
-      newFile.download = "JJ2022.jpg";
-      newFile.click();
+    //   var newFile = document.createElement("newFile");
+
+    //   newFile.href = canvas
+    //     .toDataURL(" assets/image/jpeg")
+    //     .replace("image/jpeg", "image/octet-stream");
+
+    //   newFile.download = "JJ2022.jpg";
+
+    //   newFile.click();
+        document.body.appendChild(canvas);
     });
   };
   return (
