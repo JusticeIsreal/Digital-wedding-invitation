@@ -98,7 +98,7 @@ function Home() {
                 {phonenumberError}
               </span>
             </div>
-            <div>
+            {/* <div>
               <label>Gender </label>
               <select
                 onChange={(e) => genderInput(e)}
@@ -121,7 +121,7 @@ function Home() {
               >
                 {genderError}
               </span>
-            </div>
+            </div> */}
             <div>
               <label>You will attend ? </label>
               <select
