@@ -158,13 +158,13 @@ function Home() {
                 onChange={(e) => spouseInput(e)}
               />
             </div>
-            {/* <Link to="dynamic"> */}
+            <Link to="dynamic">
             {submitBtn && (
               <button type="button" className="submit-btn">
                 SUBMIT
               </button>
             )}
-            {/* </Link> */}
+            </Link>
           </form>
         </div>
       )}

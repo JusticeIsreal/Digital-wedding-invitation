@@ -3,7 +3,7 @@ import { createContext, useReducer } from "react";
 
 const AppContext = createContext();
 const initialState = {
-  formshow: true,
+  formshow: false,
   togglebtn: true,
   name: "",
   phonenumber: "",
