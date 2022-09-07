@@ -1,6 +1,6 @@
 import "./App.css";
 import { FaTimes } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AppContext from "..//src/AppProvider";
 
@@ -8,15 +8,31 @@ function Home() {
   const {
     formshow,
     showFrom,
-    submitForm,
+    nameInput,
+    phoneNumberInput,
+    genderInput,
+    attendInput,
+    spouseInput,
     name,
-    final,
-    Pnumber,
+    phonenumber,
     attend,
+    gender,
     spouse,
     togglebtn,
+    btn,
+    submitBtn,
   } = useContext(AppContext);
 
+  // console.log(name);
+  // console.log(phonenumber);
+  // console.log(attend);
+  // console.log(gender);
+  // console.log(spouse);
+  useEffect(() => {
+    return () => {
+      btn();
+    };
+  }, [name, name, phonenumber, attend, gender]);
   return (
     <div className="iv-card">
       <div className="pick-table">
@@ -43,16 +59,21 @@ function Home() {
                 type="text"
                 placeholder="Enter Full Name"
                 value={name}
-                onChange={(e) => submitForm(e)}
+                onChange={(e) => nameInput(e)}
               />
             </div>
             <div>
               <label>Phone No.:</label>
-              <input type="number" placeholder="Enter Phone Number" />
+              <input
+                type="number"
+                placeholder="Enter Phone Number"
+                value={phonenumber}
+                onChange={(e) => phoneNumberInput(e)}
+              />
             </div>
             <div>
               <label>Gender </label>
-              <select>
+              <select onChange={(e) => genderInput(e)} value={gender}>
                 <option value="">Select</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -61,7 +82,7 @@ function Home() {
             </div>
             <div>
               <label>You will attend ? </label>
-              <select>
+              <select onChange={(e) => attendInput(e)} value={attend}>
                 <option value="">Select</option>
                 <option value="traditional">Tradition Marriage</option>
                 <option value="white">White Wedding</option>
@@ -73,12 +94,19 @@ function Home() {
                 Will you be coming with a Spouse? If "YES" enter Spouse Name
                 else leave blank
               </label>
-              <input type="text" placeholder="Enter Spouse Name" />
+              <input
+                type="text"
+                placeholder="Enter Spouse Name"
+                value={spouse}
+                onChange={(e) => spouseInput(e)}
+              />
             </div>
             {/* <Link to="dynamic"> */}
-              <button type="button" className="submit-btn" onClick={final}>
+            {submitBtn && (
+              <button type="button" className="submit-btn">
                 SUBMIT
               </button>
+            )}
             {/* </Link> */}
           </form>
         </div>
