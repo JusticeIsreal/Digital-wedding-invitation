@@ -12,20 +12,18 @@ function AppreciationPage() {
     });
   }, []);
 
-  const saveIv = () => {
-    html2canvas(document.body).then((canvas) => {
-    //   var newFile = document.createElement("newFile");
-
-    //   newFile.href = canvas
-    //     .toDataURL(" assets/image/jpeg")
-    //     .replace("image/jpeg", "image/octet-stream");
-
-    //   newFile.download = "JJ2022.jpg";
-
-    //   newFile.click();
-        document.body.appendChild(canvas);
-    });
-  };
+  //   const saveIv = () => {
+  //     html2canvas(document.body).then((canvas) => {
+  //       var newFile = document.createElement("newFile");
+  //       newFile.href = canvas
+  //         .toDataURL(" assets/image/jpeg")
+  //         .replace("image/jpeg", "image/octet-stream");
+  //       newFile.download = "JJ2022.jpg";
+  //       newFile.click();
+  //       console.log(newFile);
+  //       //   document.body.appendChild(canvas);
+  //     });
+  //   };
   return (
     <div className="dynamicPage-container">
       <div className="dynamicimg">
@@ -63,13 +61,10 @@ function AppreciationPage() {
           <img src={src} alt="" />
         </div>
         <p
-          style={{ textAlign: "center", fontStyle: "italic", fontSize: "10px" }}
+          style={{ textAlign: "center", fontStyle: "italic", fontSize: "12px" }}
         >
-          kindly download this page by clicking on the button below
+          kindly take a screenshot of this page
         </p>
-        <div className="download-page">
-          <button onClick={saveIv}>DOWNLOAD PASS</button>
-        </div>
       </div>
     </div>
   );
