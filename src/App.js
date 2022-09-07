@@ -12,7 +12,13 @@ function App() {
           <Route path="/dynamic" element={<AppreciationPage />}></Route>
         </Routes>
       </div>
-      <p>This was </p>
+      <p
+        style={{ textAlign: "center", fontSize: "10px", paddingBottom: "15px" }}
+      >
+        Designed by Justice : <a href="Tel:+2348104015180">+234 8104015180</a>{" "}
+        <br />
+        Ajistechnology@gmail.com
+      </p>
     </Router>
   );
 }
