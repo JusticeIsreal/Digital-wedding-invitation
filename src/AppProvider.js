@@ -3,7 +3,7 @@ import { createContext, useReducer } from "react";
 
 const AppContext = createContext();
 const initialState = {
-  formshow: false,
+  formshow: true,
   togglebtn: true,
   name: "",
   phonenumber: "",
@@ -11,6 +11,14 @@ const initialState = {
   gender: "",
   spouse: " ",
   submitBtn: false,
+  nameError: "",
+  phonenumberError: "",
+  attendError: "",
+  genderError: "",
+  nameErrorColor: false,
+  phoneErrorColor: false,
+  genderErrorColor: false,
+  attendErrorColor: false,
 };
 export const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -41,15 +49,21 @@ export const AppContextProvider = ({ children }) => {
   const spouseInput = (e) => {
     dispatch({ type: "SPOUSE", payload: e });
   };
+
+  // form validation errors
   const btn = () => {
-    if (
-      state.name.length > 5 &&
-      state.phonenumber.length > 10 &&
-      state.gender !== "" &&
-      state.attend !== ""
-    ) {
-      dispatch({ type: "BTN" });
-    }
+    dispatch({ type: "ERRORNAME" });
+    dispatch({ type: "ERRORPHONE" });
+    dispatch({ type: "ERRORGENDER" });
+    dispatch({ type: "ERRORATTEND" });
+    // if (state.name.length > 5) {
+    // }
+    // if (state.phonenumber.length > 10) {
+    // }
+    // if (state.gender !== "") {
+    // }
+    // if (state.attend !== "") {
+    // }
   };
 
   return (
