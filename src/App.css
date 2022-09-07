@@ -62,6 +62,7 @@ body {
   font-weight: 900;
   color: rgb(0, 0, 0);
   border: 2px solid rgba(10, 10, 10, 0.738);
+  cursor: pointer;
 }
 .App .iv-card .pick-table button:hover {
   background-color: rgb(0, 0, 0);
@@ -153,6 +154,7 @@ body {
   background-color: black;
   font-size: 30px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .App .iv-card .form form div {
   margin: 20px;
@@ -190,6 +192,7 @@ body {
   font-weight: 900;
   color: goldenrod;
   border: 1px solid goldenrod;
+  cursor: pointer;
 }
 .App .iv-card .form .submit-btn:hover {
   background-color: goldenrod;

@@ -108,6 +108,7 @@ $special-Color: #4c5eff;
         font-weight: 900;
         color: rgb(0, 0, 0);
         border: 2px solid rgba(10, 10, 10, 0.738);
+        cursor: pointer;
 
         &:hover {
           background-color: rgb(0, 0, 0);
@@ -173,6 +174,7 @@ $special-Color: #4c5eff;
           background-color: black;
           font-size: 30px;
           border-radius: 50%;
+          cursor: pointer;
           // border: 2px solid red;
         }
         div {
@@ -209,6 +211,7 @@ $special-Color: #4c5eff;
         font-weight: 900;
         color: goldenrod;
         border: 1px solid goldenrod;
+        cursor: pointer;
 
         &:hover {
           background-color: goldenrod;
