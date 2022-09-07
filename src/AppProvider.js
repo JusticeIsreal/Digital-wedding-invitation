@@ -19,11 +19,15 @@ export const AppContextProvider = ({ children }) => {
   };
 
   // submit form function
-  const submitForm = () => {
-    dispatch({ type: "POST" });
+  const submitForm = (e) => {
+    dispatch({ type: "POST", payload: e });
+  };
+
+  const final = () => {
+    dispatch({ type: "SUBMIT" });
   };
   return (
-    <AppContext.Provider value={{ ...state, showFrom, submitForm }}>
+    <AppContext.Provider value={{ ...state, showFrom, submitForm, final }}>
       {children}
     </AppContext.Provider>
   );

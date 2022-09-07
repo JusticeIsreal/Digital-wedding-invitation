@@ -1,5 +1,5 @@
 import Qrcode from "qrcode";
-import html2canvas from "html2canvas";
+// import html2canvas from "html2canvas";
 import { useEffect, useState } from "react";
 let site = "https://jenniferjustice2022.vercel.app/dynamic";
 

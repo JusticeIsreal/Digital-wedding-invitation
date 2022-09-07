@@ -10,11 +10,13 @@ function Home() {
     showFrom,
     submitForm,
     name,
+    final,
     Pnumber,
     attend,
     spouse,
     togglebtn,
   } = useContext(AppContext);
+
   return (
     <div className="iv-card">
       <div className="pick-table">
@@ -41,7 +43,7 @@ function Home() {
                 type="text"
                 placeholder="Enter Full Name"
                 value={name}
-                onChange={(e) => submitForm()}
+                onChange={(e) => submitForm(e)}
               />
             </div>
             <div>
@@ -73,11 +75,11 @@ function Home() {
               </label>
               <input type="text" placeholder="Enter Spouse Name" />
             </div>
-            <Link to="dynamic">
-              <button type="button" className="submit-btn">
+            {/* <Link to="dynamic"> */}
+              <button type="button" className="submit-btn" onClick={final}>
                 SUBMIT
               </button>
-            </Link>
+            {/* </Link> */}
           </form>
         </div>
       )}

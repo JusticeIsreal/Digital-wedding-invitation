@@ -17,7 +17,7 @@ function App() {
       >
         Designed by Justice : <a href="Tel:+2348104015180">+234 8104015180</a>{" "}
         <br />
-        Ajistechnology@gmail.com
+        E-mail: Ajistechnology@gmail.com
       </p>
     </Router>
   );
