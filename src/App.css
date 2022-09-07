@@ -219,6 +219,7 @@ body {
 }
 .App .dynamicPage-container .thanks-message p {
   margin: 10px;
+  font-size: 13px;
 }
 .App .dynamicPage-container .thanks-message .barcode {
   display: flex;

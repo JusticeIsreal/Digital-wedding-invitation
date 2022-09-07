@@ -1,8 +1,15 @@
 import Qrcode from "qrcode";
+import { useEffect, useState } from "react";
+let site = "https://jenniferjustice2022.vercel.app/dynamic";
 
 function AppreciationPage() {
-  let site = "https://jenniferjustice2022.vercel.app/";
+  const [src, setSrc] = useState("");
 
+  useEffect(() => {
+    Qrcode.toDataURL(site).then((data) => {
+      setSrc(data);
+    });
+  }, []);
   return (
     <div className="dynamicPage-container">
       <div className="dynamicimg">
@@ -12,20 +19,38 @@ function AppreciationPage() {
         />
       </div>
       <div className="thanks-message">
-        <h1>THANK YOU</h1>
-        <p>We are honored to have you</p>
-        <h2 style={{ textTransform: "uppercase", color: "goldenrod" }}>
+        <h2 style={{ textTransform: "uppercase" }}>THANK YOU</h2>
+        <h1
+          style={{
+            textTransform: "uppercase",
+            color: "goldenrod",
+            marginTop: "15px",
+          }}
+        >
           Patricia Osaro
-        </h2>
-        <p>and we look forward to see you</p>
-        <h4>A seat would be reserved for you</h4>
+        </h1>
+        <p style={{ textTransform: "uppercase", marginTop: "30px" }}>
+          We are honored to have you
+        </p>
+        <p style={{ marginTop: "-5px" }}>and look forward to see you</p>
+        <h5
+          style={{ textAlign: "center", color: "goldenrod", marginTop: "15px" }}
+        >
+          A seat would be reserved for you at Table:
+          <br></br>
+          <span style={{ color: "black", fontSize: "25px" }}>
+            {Math.floor(Math.random() * 40)}
+          </span>
+        </h5>
+
         <div className="barcode">
-          <img
-            src="https://res.cloudinary.com/isreal/image/upload/v1662505949/My%20portfolio%20Project/QR_code_for_mobile_English_Wikipedia.svg-removebg-preview_xgvr22.png"
-            alt=""
-          />
+          <img src={src} alt="" />
         </div>
-        <p>kindly download this page by clicking on the button below</p>
+        <p
+          style={{ textAlign: "center", fontStyle: "italic", fontSize: "10px" }}
+        >
+          kindly download this page by clicking on the button below
+        </p>
         <div>
           <button>DOWNLOAD PASS</button>
         </div>

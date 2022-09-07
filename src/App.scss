@@ -239,6 +239,7 @@ $special-Color: #4c5eff;
 
       p {
         margin: 10px;
+        font-size: 13px;
       }
       .barcode {
         @include flexDisplay(center, center, column);
