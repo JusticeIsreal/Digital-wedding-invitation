@@ -12,7 +12,7 @@ function App() {
           <Route path="/dynamic" element={<AppreciationPage />}></Route>
         </Routes>
 
-        <p
+        {/* <p
           style={{
             color: "white",
             backgroundColor: "black",
@@ -30,7 +30,7 @@ function App() {
         >
           Designed by Justice : <a href="Tel:+2348104015180">+234 8104015180</a>
           :::: Ajistechnology@gmail.com
-        </p>
+        </p> */}
       </div>
     </Router>
   );
