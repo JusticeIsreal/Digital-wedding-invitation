@@ -39,8 +39,7 @@ const reducer = (state, action) => {
 
   // ERROR HANDLER
   if (action.type === "ERRORNAME") {
-    var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
-    if (!regName.test(state.name)) {
+    if (state.name.length < 7) {
       return {
         ...state,
         submitBtn: false,
