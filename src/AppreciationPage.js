@@ -1,4 +1,5 @@
 import Qrcode from "qrcode";
+import html2canvas from "html2canvas";
 import { useEffect, useState } from "react";
 let site = "https://jenniferjustice2022.vercel.app/dynamic";
 
@@ -10,6 +11,17 @@ function AppreciationPage() {
       setSrc(data);
     });
   }, []);
+
+  const saveIv = () => {
+    html2canvas(document.body).then((canvas) => {
+      var newFile = document.createElement("newFile");
+      newFile.href = canvas
+        .toDataURL("..assets/images/jpeg")
+        .replace("image/jpeg", "image/octet-stream");
+      newFile.download = "JJ2022.jpg";
+      newFile.click();
+    });
+  };
   return (
     <div className="dynamicPage-container">
       <div className="dynamicimg">
@@ -51,8 +63,8 @@ function AppreciationPage() {
         >
           kindly download this page by clicking on the button below
         </p>
-        <div>
-          <button>DOWNLOAD PASS</button>
+        <div className="download-page">
+          <button onClick={saveIv}>DOWNLOAD PASS</button>
         </div>
       </div>
     </div>
