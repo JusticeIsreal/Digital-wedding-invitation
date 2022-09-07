@@ -56,14 +56,6 @@ export const AppContextProvider = ({ children }) => {
     dispatch({ type: "ERRORPHONE" });
     dispatch({ type: "ERRORGENDER" });
     dispatch({ type: "ERRORATTEND" });
-    // if (state.name.length > 5) {
-    // }
-    // if (state.phonenumber.length > 10) {
-    // }
-    // if (state.gender !== "") {
-    // }
-    // if (state.attend !== "") {
-    // }
   };
 
   return (

@@ -11,9 +11,11 @@
 }
 
 body {
+  height: 100vh;
+  // border: 5px solid red;
   //   max-width: 1700px;
   //   max-height: 1500px;
-  background-color: rgba(0, 0, 0, 0);
+  // background-color: rgba(178, 146, 57, 0.634);
 }
 
 *::-webkit-scrollbar {
@@ -163,6 +165,9 @@ $special-Color: #4c5eff;
         border-radius: 10px;
         position: relative;
         margin-top: 50%;
+        @include responsive(bigphone) {
+          margin-top: 0%;
+        }
 
         .cancel {
           color: goldenrod;

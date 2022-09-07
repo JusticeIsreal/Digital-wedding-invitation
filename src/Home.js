@@ -57,7 +57,7 @@ function Home() {
               This invitation ID only covers for a MAXIMUM 0F 2 PERSONS
             </h6>
             <div>
-              <label>Name :</label>
+              <label>Full Name :</label>
               <input
                 type="text"
                 placeholder="Enter Full Name"
@@ -68,7 +68,7 @@ function Home() {
               <span
                 style={{
                   color: nameErrorColor ? "green" : "red",
-                  marginLeft: "auto",
+                  marginRight: "auto",
                   fontSize: "12px",
                   fontStyle: "italic",
                   marginTop: "5px",
@@ -78,7 +78,7 @@ function Home() {
               </span>
             </div>
             <div>
-              <label>Phone No.:</label>
+              <label>Phone Noumber:</label>
               <input
                 type="number"
                 placeholder="Enter Phone Number"
@@ -89,7 +89,7 @@ function Home() {
               <span
                 style={{
                   color: phoneErrorColor ? "green" : "red",
-                  marginLeft: "auto",
+                  marginRight: "auto",
                   fontSize: "12px",
                   fontStyle: "italic",
                   marginTop: "5px",
@@ -113,7 +113,7 @@ function Home() {
               <span
                 style={{
                   color: genderErrorColor ? "green" : "red",
-                  marginLeft: "auto",
+                  marginRight: "auto",
                   fontSize: "12px",
                   fontStyle: "italic",
                   marginTop: "5px",
@@ -137,7 +137,7 @@ function Home() {
               <span
                 style={{
                   color: attendErrorColor ? "green" : "red",
-                  marginLeft: "auto",
+                  marginRight: "auto",
                   fontSize: "12px",
                   fontStyle: "italic",
                   marginTop: "5px",
