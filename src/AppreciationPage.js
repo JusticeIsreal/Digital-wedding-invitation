@@ -65,6 +65,18 @@ function AppreciationPage() {
         >
           kindly take a screenshot of this page
         </p>
+        <p
+          style={{
+            textAlign: "center",
+            fontStyle: "italic",
+            fontSize: "10px",
+            position: "absolute",
+            bottom: "-5px",
+            color: "goldenrod",
+          }}
+        >
+          courtesy:The bride and Groom
+        </p>
       </div>
     </div>
   );

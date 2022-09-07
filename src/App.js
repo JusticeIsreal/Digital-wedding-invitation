@@ -12,6 +12,7 @@ function App() {
           <Route path="/dynamic" element={<AppreciationPage />}></Route>
         </Routes>
       </div>
+      <p>This was </p>
     </Router>
   );
 }
