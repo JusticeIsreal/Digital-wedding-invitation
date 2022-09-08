@@ -5,6 +5,7 @@ const users = [
     phonenumber: 888,
     attend: "white",
     spouse: "joy",
+    seatNo: 45,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const users = [
     phonenumber: 222,
     attend: "traditional",
     spouse: "momoh",
+    seatNo: 4,
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ const users = [
     phonenumber: 777,
     attend: "both",
     spouse: "mary odia",
+    seatNo: 5,
   },
 ];
 export default users;

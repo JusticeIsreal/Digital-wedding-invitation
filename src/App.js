@@ -18,6 +18,7 @@ function App() {
       phonenumber,
       attend,
       spouse,
+      seatNo: Math.floor(Math.random() * 40),
     };
 
     people.unshift(gg);

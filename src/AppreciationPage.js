@@ -65,9 +65,11 @@ function AppreciationPage({ ff }) {
         >
           A seat would be reserved for you at Table:
           <br></br>
-          <span style={{ color: "black", fontSize: "25px" }}>
-            {Math.floor(Math.random() * 40)}
-          </span>
+          {ff.map((ee) => (
+            <span key={ee.id} style={{ color: "black", fontSize: "25px" }}>
+              {ee.seatNo}
+            </span>
+          ))}
         </h5>
 
         <div className="barcode">
