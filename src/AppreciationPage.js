@@ -1,4 +1,5 @@
 import Qrcode from "qrcode";
+import { Table } from "@mantine/core";
 import { useParams } from "react-router-dom";
 // import html2canvas from "html2canvas";
 import { useContext } from "react";
@@ -7,10 +8,25 @@ import { useEffect, useState } from "react";
 let site = "https://jenniferjustice2022.vercel.app/dynamic";
 
 function AppreciationPage({ ff }) {
+  const { people } = useContext(AppContext);
+  // table details
+  const rows = people.map((person) => (
+    <tr key={person.id}>
+      <td>{person.name}</td>
+      <td>{person.phonenumber}</td>
+      <td>{person.attend}</td>
+      <td>{person.spouse}</td>
+    </tr>
+  ));
+
+  // use param for dynamic routing
   const { id } = useParams();
+
+  // usestate to manage QRcode
   const [src, setSrc] = useState("");
 
-  const { people } = useContext(AppContext);
+  //
+
   let oo = people.filter((w) => w.id === id);
 
   // console.log(oo);
@@ -95,6 +111,17 @@ function AppreciationPage({ ff }) {
           courtesy:The bride and Groom
         </p>
       </div>
+      <Table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone No.</th>
+            <th>Attend</th>
+            <th>Spouse</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </Table>
     </div>
   );
 }

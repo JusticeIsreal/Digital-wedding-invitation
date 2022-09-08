@@ -30,7 +30,7 @@ function App() {
     <Router>
       <div className="App" style={{ position: "relative" }}>
         <Routes>
-          <Route path="/" element={<Home submitinfo={submitInfo} />}></Route>
+          <Route path="/" element={<Home submitinfo={submitInfo} people={people} />}></Route>
           <Route path="/dynamic" element={<AppreciationPage ff={ff} />}></Route>
         </Routes>
 
