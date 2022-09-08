@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AppContext from "..//src/AppProvider";
 
-function Home() {
+function Home({submitinfo}) {
   const {
     formshow,
     showFrom,
@@ -29,6 +29,8 @@ function Home() {
     phoneErrorColor,
     genderErrorColor,
     attendErrorColor,
+    submitInfo,
+    people,
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -36,6 +38,8 @@ function Home() {
       btn();
     };
   }, [name, name, phonenumber, attend, gender]);
+
+  // console.log(ff.id);
   return (
     <div className="iv-card">
       <div className="pick-table">
@@ -158,9 +162,9 @@ function Home() {
                 onChange={(e) => spouseInput(e)}
               />
             </div>
-            <Link to="dynamic">
+            <Link to="/dynamic">
             {submitBtn && (
-              <button type="button" className="submit-btn">
+              <button type="button" className="submit-btn" onClick={submitinfo}>
                 SUBMIT
               </button>
             )}

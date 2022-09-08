@@ -1,10 +1,20 @@
 import Qrcode from "qrcode";
+import { useParams, Link } from "react-router-dom";
 // import html2canvas from "html2canvas";
+import { useContext } from "react";
+import AppContext from "..//src/AppProvider";
 import { useEffect, useState } from "react";
 let site = "https://jenniferjustice2022.vercel.app/dynamic";
 
-function AppreciationPage() {
+function AppreciationPage({ ff }) {
+  const { id } = useParams();
   const [src, setSrc] = useState("");
+
+  const { people } = useContext(AppContext);
+  let oo = people.filter((w) => w.id === id);
+
+  console.log(oo);
+  console.log(id);
 
   useEffect(() => {
     Qrcode.toDataURL(site).then((data) => {
@@ -34,15 +44,18 @@ function AppreciationPage() {
       </div>
       <div className="thanks-message">
         <h2 style={{ textTransform: "uppercase" }}>THANK YOU</h2>
-        <h1
-          style={{
-            textTransform: "uppercase",
-            color: "goldenrod",
-            marginTop: "15px",
-          }}
-        >
-          Patricia Osaro
-        </h1>
+        {ff.map((rr) => (
+          <h1
+            key={rr.id}
+            style={{
+              textTransform: "uppercase",
+              color: "goldenrod",
+              marginTop: "15px",
+            }}
+          >
+            {rr.name}
+          </h1>
+        ))}
         <p style={{ textTransform: "uppercase", marginTop: "30px" }}>
           We are honored to have you
         </p>
