@@ -4,13 +4,13 @@ import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AppContext from "..//src/AppProvider";
 
-function Home({submitinfo}) {
+function Home({ submitinfo }) {
   const {
     formshow,
     showFrom,
     nameInput,
     phoneNumberInput,
-    genderInput,
+    // genderInput,
     attendInput,
     spouseInput,
     name,
@@ -24,13 +24,13 @@ function Home({submitinfo}) {
     nameError,
     phonenumberError,
     attendError,
-    genderError,
+    // genderError,
     nameErrorColor,
     phoneErrorColor,
-    genderErrorColor,
+    // genderErrorColor,
     attendErrorColor,
-    submitInfo,
-    people,
+    // submitInfo,
+    // people,
   } = useContext(AppContext);
 
   useEffect(() => {
@@ -82,7 +82,7 @@ function Home({submitinfo}) {
               </span>
             </div>
             <div>
-              <label>Phone Noumber:</label>
+              <label>Phone Number:</label>
               <input
                 type="number"
                 placeholder="Enter Phone Number"
@@ -163,11 +163,15 @@ function Home({submitinfo}) {
               />
             </div>
             <Link to="/dynamic">
-            {submitBtn && (
-              <button type="button" className="submit-btn" onClick={submitinfo}>
-                SUBMIT
-              </button>
-            )}
+              {submitBtn && (
+                <button
+                  type="button"
+                  className="submit-btn"
+                  onClick={submitinfo}
+                >
+                  SUBMIT
+                </button>
+              )}
             </Link>
           </form>
         </div>

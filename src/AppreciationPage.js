@@ -1,5 +1,5 @@
 import Qrcode from "qrcode";
-import { useParams, Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
 // import html2canvas from "html2canvas";
 import { useContext } from "react";
 import AppContext from "..//src/AppProvider";
@@ -51,6 +51,7 @@ function AppreciationPage({ ff }) {
               textTransform: "uppercase",
               color: "goldenrod",
               marginTop: "15px",
+              textAlign: "center",
             }}
           >
             {rr.name}

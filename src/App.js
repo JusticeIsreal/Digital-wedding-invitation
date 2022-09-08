@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppreciationPage from "./AppreciationPage";
 import Home from "./Home";
 import AppContext from "..//src/AppProvider";
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 
 function App() {
   const { name, phonenumber, attend, spouse, people } = useContext(AppContext);
