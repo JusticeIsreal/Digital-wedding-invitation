@@ -43,7 +43,7 @@ function Home({ submitinfo }) {
   return (
     <div className="iv-card">
       <div className="pick-table">
-        {togglebtn && <button onClick={showFrom}>RESERVE A SEAT</button>}
+        {togglebtn && <button onClick={showFrom}>CLICK HERE TO RESERVE A SEAT</button>}
       </div>
       {formshow && (
         <div className="form">

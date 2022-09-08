@@ -25,7 +25,7 @@ const initialState = {
 export const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log(state.people);
+  // console.log(state.people);
 
   // show form function
   const showFrom = () => {

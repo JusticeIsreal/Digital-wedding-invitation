@@ -1,5 +1,5 @@
 import Qrcode from "qrcode";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import html2canvas from "html2canvas";
 import { useContext } from "react";
 import AppContext from "..//src/AppProvider";
@@ -13,8 +13,8 @@ function AppreciationPage({ ff }) {
   const { people } = useContext(AppContext);
   let oo = people.filter((w) => w.id === id);
 
-  console.log(oo);
-  console.log(id);
+  // console.log(oo);
+  // console.log(id);
 
   useEffect(() => {
     Qrcode.toDataURL(site).then((data) => {
@@ -52,6 +52,7 @@ function AppreciationPage({ ff }) {
               color: "goldenrod",
               marginTop: "15px",
               textAlign: "center",
+              wordBreak: "break-word",
             }}
           >
             {rr.name}

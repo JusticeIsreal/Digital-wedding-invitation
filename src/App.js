@@ -22,10 +22,10 @@ function App() {
     };
 
     people.unshift(gg);
-    console.log(people);
+    // console.log(people);
   };
 
-  console.log(ff.map((r) => r.name));
+  // console.log(ff.map((r) => r.name));
   return (
     <Router>
       <div className="App" style={{ position: "relative" }}>
