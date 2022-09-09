@@ -56,7 +56,7 @@ function App() {
     };
 
     setList([usersIn]);
-    window.location.reload(false);
+    
   };
 
   const [list, setList] = useState(storedItems);

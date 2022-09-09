@@ -18,6 +18,7 @@ function AppreciationPage({ users, list }) {
     Qrcode.toDataURL(site).then((data) => {
       setSrc(data);
     });
+    window.location.reload(false);
   }, []);
 
   //   const saveIv = () => {
