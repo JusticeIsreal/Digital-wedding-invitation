@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import AppContext from "..//src/AppProvider";
 
 function Home({ postUsers, users, list }) {
+   
   const [ite, setIte] = useState([]);
   const {
     formshow,
@@ -38,24 +39,11 @@ function Home({ postUsers, users, list }) {
     return () => {
       btn();
     };
-  }, [name, name, phonenumber, attend, gender]);
+  }, [name,  phonenumber, attend, gender]);
 
-  let uu = users.map((r) => r);
-  let usersIn = {
-    name: name,
-    phoneNumber: phonenumber,
-    attend: attend,
-    spouse: spouse,
-  };
 
-  if (users.length > 0) {
-    // let yy = uu.filter((u) => u.phoneNumber === phonenumber);
-    // setIte(...usersIn, ...users);
-    // console.log(yy);
-    console.log(ite);
-    // setIte(...users)
-    // console.log(uu[0].phoneNumber);
-  }
+
+  
 
   return (
     <div className="iv-card">
@@ -102,8 +90,9 @@ function Home({ postUsers, users, list }) {
                   marginTop: "20px",
                 }}
               >
-                You already made a reservation and a seat has been reserved for you
-                if you have any challenges Click on the link below  <a href="Tel:+2348104015180">Click here</a>
+                You already made a reservation and a seat has been reserved for
+                you if you have any challenges Click on the link below{" "}
+                <a href="Tel:+2348104015180">Click here</a>
               </p>
             </div>
           ) : (

@@ -1,7 +1,4 @@
 import Qrcode from "qrcode";
-import { Table } from "@mantine/core";
-// import { useParams } from "react-router-dom";
-// import html2canvas from "html2canvas";
 import { useContext } from "react";
 import AppContext from "..//src/AppProvider";
 import { useEffect, useState } from "react";
@@ -18,18 +15,6 @@ function AppreciationPage({ users, list }) {
       setSrc(data);
     });
   }, []);
-  let coun = 1;
-  const reFresh = (e) => {
-    // coun++;
-    // window.location.reload();
-    // e.preventDefault();
-  };
-
-  useEffect(() => {
-    return () => {
-      reFresh();
-    };
-  }, []);
 
   return (
     <div className="dynamicPage-container">
@@ -41,17 +26,20 @@ function AppreciationPage({ users, list }) {
       </div>
       <div className="thanks-message">
         <h2 style={{ textTransform: "uppercase" }}>THANK YOU</h2>
-        <h1
-          style={{
-            textTransform: "uppercase",
-            color: "goldenrod",
-            marginTop: "15px",
-            textAlign: "center",
-            wordBreak: "break-word",
-          }}
-        >
-          {list[0].name}
-        </h1>
+        {list.map((dd) => (
+          <h1
+            key={dd.id}
+            style={{
+              textTransform: "uppercase",
+              color: "goldenrod",
+              marginTop: "15px",
+              textAlign: "center",
+              wordBreak: "break-word",
+            }}
+          >
+            {dd.name}
+          </h1>
+        ))}
 
         <p style={{ textTransform: "uppercase", marginTop: "30px" }}>
           We are honored to have you
@@ -63,7 +51,9 @@ function AppreciationPage({ users, list }) {
           A seat would be reserved for you at Table:
           <br></br>
           <span style={{ color: "black", fontSize: "25px" }}>
-            {list[0].seat}
+            {list.map((dd) => (
+              <h1 key={dd.id}>{dd.seat}</h1>
+            ))}
           </span>
         </h5>
         <div className="barcode">

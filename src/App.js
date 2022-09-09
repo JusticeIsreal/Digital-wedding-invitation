@@ -14,6 +14,7 @@ function App() {
 
   //
   // dynamic name change
+  const [list, setList] = useState(storedItems);
 
   // fetch API
   const fetchUsers = () => {
@@ -43,7 +44,7 @@ function App() {
 
     axios
       .post(API, usersInputs)
-      .then((resp) => {})
+      .then((resp) => { window.location.reload(false)})
       .catch((err) => {});
 
     let usersIn = {
@@ -57,13 +58,8 @@ function App() {
 
     setList([usersIn]);
   };
+  console.log(list);
 
-  const [list, setList] = useState(storedItems);
-  
-
-  // console.log(storedItems);
-
-  console.log(storedItems);
   localStorage.setItem("list", JSON.stringify(list));
 
   return (
