@@ -1,5 +1,5 @@
 import reducer from "../src/Reducer";
-import users from "../src/Api";
+// import users from "../src/Api";
 import { createContext, useReducer } from "react";
 
 const AppContext = createContext();
@@ -20,7 +20,6 @@ const initialState = {
   phoneErrorColor: false,
   genderErrorColor: false,
   attendErrorColor: false,
-  people: users,
 };
 export const AppContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -61,7 +60,11 @@ export const AppContextProvider = ({ children }) => {
     dispatch({ type: "ERRORGENDER" });
     dispatch({ type: "ERRORATTEND" });
   };
- 
+
+  // const postUsers = () => {
+  //   dispatch({ type: "POST_USERS" });
+  // };
+
   return (
     <AppContext.Provider
       value={{
@@ -73,7 +76,6 @@ export const AppContextProvider = ({ children }) => {
         genderInput,
         attendInput,
         spouseInput,
-        
       }}
     >
       {children}

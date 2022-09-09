@@ -1,36 +1,18 @@
 import Qrcode from "qrcode";
 import { Table } from "@mantine/core";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 // import html2canvas from "html2canvas";
 import { useContext } from "react";
 import AppContext from "..//src/AppProvider";
 import { useEffect, useState } from "react";
 let site = "https://jenniferjustice2022.vercel.app/dynamic";
+const myName = localStorage.getItem("hhh");
 
-function AppreciationPage({ ff }) {
-  const { people } = useContext(AppContext);
-  // table details
-  const rows = people.map((person) => (
-    <tr key={person.id}>
-      <td>{person.name}</td>
-      <td>{person.phonenumber}</td>
-      <td>{person.attend}</td>
-      <td>{person.spouse}</td>
-    </tr>
-  ));
-
-  // use param for dynamic routing
-  const { id } = useParams();
+function AppreciationPage({ users, list }) {
+  const { name, phonenumber, attend, spouse } = useContext(AppContext);
 
   // usestate to manage QRcode
   const [src, setSrc] = useState("");
-
-  //
-
-  let oo = people.filter((w) => w.id === id);
-
-  // console.log(oo);
-  // console.log(id);
 
   useEffect(() => {
     Qrcode.toDataURL(site).then((data) => {
@@ -60,20 +42,18 @@ function AppreciationPage({ ff }) {
       </div>
       <div className="thanks-message">
         <h2 style={{ textTransform: "uppercase" }}>THANK YOU</h2>
-        {ff.map((rr) => (
-          <h1
-            key={rr.id}
-            style={{
-              textTransform: "uppercase",
-              color: "goldenrod",
-              marginTop: "15px",
-              textAlign: "center",
-              wordBreak: "break-word",
-            }}
-          >
-            {rr.name}
-          </h1>
-        ))}
+        <h1
+          style={{
+            textTransform: "uppercase",
+            color: "goldenrod",
+            marginTop: "15px",
+            textAlign: "center",
+            wordBreak: "break-word",
+          }}
+        >
+          {list[0].name}
+        </h1>
+
         <p style={{ textTransform: "uppercase", marginTop: "30px" }}>
           We are honored to have you
         </p>
@@ -83,13 +63,10 @@ function AppreciationPage({ ff }) {
         >
           A seat would be reserved for you at Table:
           <br></br>
-          {ff.map((ee) => (
-            <span key={ee.id} style={{ color: "black", fontSize: "25px" }}>
-              {ee.seatNo}
-            </span>
-          ))}
+          <span style={{ color: "black", fontSize: "25px" }}>
+            {list[0].seat}
+          </span>
         </h5>
-
         <div className="barcode">
           <img src={src} alt="" />
         </div>
@@ -111,17 +88,32 @@ function AppreciationPage({ ff }) {
           courtesy:The bride and Groom
         </p>
       </div>
-      <Table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Phone No.</th>
-            <th>Attend</th>
-            <th>Spouse</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </Table>
+      {users.length === 0 ? (
+        <h1>Loading ...</h1>
+      ) : (
+        <Table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone No.</th>
+              <th>Attend</th>
+              <th>Spouse</th>
+              <th>Table</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((element, index) => (
+              <tr key={index}>
+                <td>{element.name}</td>
+                <td>{element.phoneNumber}</td>
+                <td>{element.attend}</td>
+                <td>{element.spouse}</td>
+                <td>{element.seat}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      )}
     </div>
   );
 }

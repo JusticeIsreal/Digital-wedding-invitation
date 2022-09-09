@@ -1,3 +1,5 @@
+
+
 const reducer = (state, action) => {
   if (action.type === "FORMTOGGLE") {
     return {
@@ -107,6 +109,8 @@ const reducer = (state, action) => {
       };
     }
   }
+
+ 
   return state;
 };
 export default reducer;

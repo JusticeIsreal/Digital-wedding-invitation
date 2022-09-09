@@ -1,37 +1,90 @@
 import "./App.css";
+import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppreciationPage from "./AppreciationPage";
 import Home from "./Home";
 import AppContext from "..//src/AppProvider";
-import { useContext} from "react";
+import { useState, useEffect, useContext } from "react";
+let API = "https://justice-wedding-api.herokuapp.com/users";
 
+const storedItems = JSON.parse(localStorage.getItem("list")) || [];
 function App() {
-  const { name, phonenumber, attend, spouse, people } = useContext(AppContext);
+  const { name, phonenumber, attend, spouse } = useContext(AppContext);
+  const [people, setPeople] = useState([]);
 
-  // console.log(name);
+  //
   // dynamic name change
-  let ff = people.filter((person) => person.name === name);
-  const submitInfo = () => {
-    let gg = {
-      id: 4,
-      name,
-      phonenumber,
-      attend,
-      spouse,
-      seatNo: Math.floor(Math.random() * 40),
-    };
 
-    people.unshift(gg);
-    // console.log(people);
+  // fetch API
+  const fetchUsers = () => {
+    axios
+      .get(API)
+      .then((resp) => {
+        setPeople(resp.data.users);
+      })
+      .catch((error) => {
+        throw error.message;
+      });
   };
 
-  // console.log(ff.map((r) => r.name));
+  useEffect(() => {
+    return () => {
+      fetchUsers();
+    };
+  }, []);
+
+  const postUsers = () => {
+    let usersInputs = {
+      name: name,
+      phoneNumber: phonenumber,
+      attend: attend,
+      spouse: spouse,
+    };
+
+    axios
+      .post(API, usersInputs)
+      .then((resp) => {})
+      .catch((err) => {});
+
+    let usersIn = {
+      id: 1,
+      name: name,
+      phoneNumber: phonenumber,
+      attend: attend,
+      spouse: spouse,
+      seat: Math.floor(Math.random() * 40),
+    };
+
+    setList([usersIn]);
+  };
+
+  const [list, setList] = useState(storedItems);
+  //
+ 
+
+  // console.log(storedItems);
+
+  useEffect(() => {
+    return () => {};
+  }, []);
+
+  console.log(storedItems);
+  localStorage.setItem("list", JSON.stringify(list));
+
   return (
     <Router>
       <div className="App" style={{ position: "relative" }}>
         <Routes>
-          <Route path="/" element={<Home submitinfo={submitInfo} people={people} />}></Route>
-          <Route path="/dynamic" element={<AppreciationPage ff={ff} />}></Route>
+          <Route
+            path="/"
+            element={
+              <Home users={people} postUsers={postUsers} list={storedItems} />
+            }
+          ></Route>
+          <Route
+            path="/dynamic"
+            element={<AppreciationPage users={people} list={storedItems} />}
+          ></Route>
         </Routes>
 
         {/* <p

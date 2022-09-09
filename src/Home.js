@@ -1,10 +1,11 @@
 import "./App.css";
 import { FaTimes } from "react-icons/fa";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AppContext from "..//src/AppProvider";
 
-function Home({ submitinfo }) {
+function Home({ postUsers, users, list }) {
+  const [ite, setIte] = useState([]);
   const {
     formshow,
     showFrom,
@@ -39,11 +40,29 @@ function Home({ submitinfo }) {
     };
   }, [name, name, phonenumber, attend, gender]);
 
-  // console.log(ff.id);
+  let uu = users.map((r) => r);
+  let usersIn = {
+    name: name,
+    phoneNumber: phonenumber,
+    attend: attend,
+    spouse: spouse,
+  };
+
+  if (users.length > 0) {
+    // let yy = uu.filter((u) => u.phoneNumber === phonenumber);
+    // setIte(...usersIn, ...users);
+    // console.log(yy);
+    console.log(ite);
+    // setIte(...users)
+    // console.log(uu[0].phoneNumber);
+  }
+
   return (
     <div className="iv-card">
       <div className="pick-table">
-        {togglebtn && <button onClick={showFrom}>CLICK HERE TO RESERVE A SEAT</button>}
+        {togglebtn && (
+          <button onClick={showFrom}>CLICK HERE TO RESERVE A SEAT</button>
+        )}
       </div>
       {formshow && (
         <div className="form">
@@ -162,17 +181,21 @@ function Home({ submitinfo }) {
                 onChange={(e) => spouseInput(e)}
               />
             </div>
-            <Link to="/dynamic">
-              {submitBtn && (
-                <button
-                  type="button"
-                  className="submit-btn"
-                  onClick={submitinfo}
-                >
-                  SUBMIT
-                </button>
-              )}
-            </Link>
+            {list.length > 0 ? (
+              "A seat has already been reserved for you "
+            ) : (
+              <Link to="/dynamic">
+                {submitBtn && (
+                  <button
+                    type="submit"
+                    className="submit-btn"
+                    onClick={postUsers}
+                  >
+                    SUBMIT
+                  </button>
+                )}
+              </Link>
+            )}
           </form>
         </div>
       )}
