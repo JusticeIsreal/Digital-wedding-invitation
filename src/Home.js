@@ -59,6 +59,7 @@ function Home({ postUsers, users, list }) {
 
   return (
     <div className="iv-card">
+     
       <div className="pick-table">
         {togglebtn && (
           <button onClick={showFrom}>CLICK HERE TO RESERVE A SEAT</button>
@@ -181,21 +182,18 @@ function Home({ postUsers, users, list }) {
                 onChange={(e) => spouseInput(e)}
               />
             </div>
-            {list.length > 0 ? (
-              "A seat has already been reserved for you "
-            ) : (
-              <Link to="/dynamic">
-                {submitBtn && (
-                  <button
-                    type="submit"
-                    className="submit-btn"
-                    onClick={postUsers}
-                  >
-                    SUBMIT
-                  </button>
-                )}
-              </Link>
-            )}
+  
+            <Link to="/dynamic">
+              {submitBtn && (
+                <button
+                  type="submit"
+                  className="submit-btn"
+                  onClick={postUsers}
+                >
+                  SUBMIT
+                </button>
+              )}
+            </Link>
           </form>
         </div>
       )}
