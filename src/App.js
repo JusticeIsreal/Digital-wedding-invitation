@@ -56,11 +56,10 @@ function App() {
     };
 
     setList([usersIn]);
-    
   };
 
   const [list, setList] = useState(storedItems);
-  //
+  
 
   // console.log(storedItems);
 

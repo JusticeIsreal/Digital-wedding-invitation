@@ -5,8 +5,7 @@ import { Table } from "@mantine/core";
 import { useContext } from "react";
 import AppContext from "..//src/AppProvider";
 import { useEffect, useState } from "react";
-let site = "https://jenniferjustice2022.vercel.app/";
-const myName = localStorage.getItem("hhh");
+let site = "https://jenniferjustice2022.vercel.app/dynamic";
 
 function AppreciationPage({ users, list }) {
   const { name, phonenumber, attend, spouse } = useContext(AppContext);
@@ -19,19 +18,19 @@ function AppreciationPage({ users, list }) {
       setSrc(data);
     });
   }, []);
-  window.location.reload(false);
-  //   const saveIv = () => {
-  //     html2canvas(document.body).then((canvas) => {
-  //       var newFile = document.createElement("newFile");
-  //       newFile.href = canvas
-  //         .toDataURL(" assets/image/jpeg")
-  //         .replace("image/jpeg", "image/octet-stream");
-  //       newFile.download = "JJ2022.jpg";
-  //       newFile.click();
-  //       console.log(newFile);
-  //       //   document.body.appendChild(canvas);
-  //     });
-  //   };
+  let coun = 1;
+  const reFresh = (e) => {
+    // coun++;
+    // window.location.reload();
+    // e.preventDefault();
+  };
+
+  useEffect(() => {
+    return () => {
+      reFresh();
+    };
+  }, []);
+
   return (
     <div className="dynamicPage-container">
       <div className="dynamicimg">
