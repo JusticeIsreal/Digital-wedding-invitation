@@ -59,7 +59,6 @@ function Home({ postUsers, users, list }) {
 
   return (
     <div className="iv-card">
-     
       <div className="pick-table">
         {togglebtn && (
           <button onClick={showFrom}>CLICK HERE TO RESERVE A SEAT</button>
@@ -67,62 +66,103 @@ function Home({ postUsers, users, list }) {
       </div>
       {formshow && (
         <div className="form">
-          <form>
-            <div className="cancel" onClick={showFrom}>
-              <FaTimes />
-            </div>
-            <h6
+          {list.length > 0 ? (
+            <div
               style={{
-                textAlign: "center",
-                zIndex: "2",
-                marginTop: "10px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                width: "300px",
+                height: "400px",
+                border: "5px solid goldenrod",
+                backgroundColor: "black",
+                position: "relative",
               }}
             >
-              This invitation ID only covers for a MAXIMUM 0F 2 PERSONS
-            </h6>
-            <div>
-              <label>Full Name :</label>
-              <input
-                type="text"
-                placeholder="Enter Full Name"
-                value={name}
-                onChange={(e) => nameInput(e)}
-                style={{ border: nameErrorColor && "2px solid green " }}
-              />
-              <span
+              <div
+                className="cancel"
+                onClick={showFrom}
                 style={{
-                  color: nameErrorColor ? "green" : "red",
-                  marginRight: "auto",
-                  fontSize: "12px",
-                  fontStyle: "italic",
-                  marginTop: "5px",
+                  position: "absolute",
+                  top: "0",
+                  right: "0",
+                  fontSize: "30px",
                 }}
               >
-                {nameError}
-              </span>
-            </div>
-            <div>
-              <label>Phone Number:</label>
-              <input
-                type="number"
-                placeholder="Enter Phone Number"
-                value={phonenumber}
-                onChange={(e) => phoneNumberInput(e)}
-                style={{ border: phoneErrorColor && "2px solid green " }}
-              />
-              <span
+                <FaTimes />
+              </div>
+              <h1>{list[0].name}</h1>{" "}
+              <p
                 style={{
-                  color: phoneErrorColor ? "green" : "red",
-                  marginRight: "auto",
-                  fontSize: "12px",
-                  fontStyle: "italic",
-                  marginTop: "5px",
+                  display: "flex",
+                  justifyContent: "center",
+                  textAlign: "center",
+                  flexDirection: "column",
+                  marginTop: "20px",
                 }}
               >
-                {phonenumberError}
-              </span>
+                You already made a reservation and a seat has been reserved for you
+                if you have any challenges Click on the link below  <a href="Tel:+2348104015180">Click here</a>
+              </p>
             </div>
-            {/* <div>
+          ) : (
+            <form>
+              <div className="cancel" onClick={showFrom}>
+                <FaTimes />
+              </div>
+              <h6
+                style={{
+                  textAlign: "center",
+                  zIndex: "2",
+                  marginTop: "10px",
+                }}
+              >
+                This invitation ID only covers for a MAXIMUM 0F 2 PERSONS
+              </h6>
+              <div>
+                <label>Full Name :</label>
+                <input
+                  type="text"
+                  placeholder="Enter Full Name"
+                  value={name}
+                  onChange={(e) => nameInput(e)}
+                  style={{ border: nameErrorColor && "2px solid green " }}
+                />
+                <span
+                  style={{
+                    color: nameErrorColor ? "green" : "red",
+                    marginRight: "auto",
+                    fontSize: "12px",
+                    fontStyle: "italic",
+                    marginTop: "5px",
+                  }}
+                >
+                  {nameError}
+                </span>
+              </div>
+              <div>
+                <label>Phone Number:</label>
+                <input
+                  type="number"
+                  placeholder="Enter Phone Number"
+                  value={phonenumber}
+                  onChange={(e) => phoneNumberInput(e)}
+                  style={{ border: phoneErrorColor && "2px solid green " }}
+                />
+                <span
+                  style={{
+                    color: phoneErrorColor ? "green" : "red",
+                    marginRight: "auto",
+                    fontSize: "12px",
+                    fontStyle: "italic",
+                    marginTop: "5px",
+                  }}
+                >
+                  {phonenumberError}
+                </span>
+              </div>
+              {/* <div>
               <label>Gender </label>
               <select
                 onChange={(e) => genderInput(e)}
@@ -146,55 +186,56 @@ function Home({ postUsers, users, list }) {
                 {genderError}
               </span>
             </div> */}
-            <div>
-              <label>You will attend ? </label>
-              <select
-                onChange={(e) => attendInput(e)}
-                value={attend}
-                style={{ border: attendErrorColor && "2px solid green " }}
-              >
-                <option value="">Select</option>
-                <option value="traditional">Tradition Marriage</option>
-                <option value="white">White Wedding</option>
-                <option value="Both">Both</option>
-              </select>
-              <span
-                style={{
-                  color: attendErrorColor ? "green" : "red",
-                  marginRight: "auto",
-                  fontSize: "12px",
-                  fontStyle: "italic",
-                  marginTop: "5px",
-                }}
-              >
-                {attendError}
-              </span>
-            </div>
-            <div>
-              <label style={{ textAlign: "center" }}>
-                Will you be coming with a Spouse? If "YES" enter Spouse Name
-                else leave blank
-              </label>
-              <input
-                type="text"
-                placeholder="Enter Spouse Name"
-                value={spouse}
-                onChange={(e) => spouseInput(e)}
-              />
-            </div>
-  
-            <Link to="/dynamic">
-              {submitBtn && (
-                <button
-                  type="submit"
-                  className="submit-btn"
-                  onClick={postUsers}
+              <div>
+                <label>You will attend ? </label>
+                <select
+                  onChange={(e) => attendInput(e)}
+                  value={attend}
+                  style={{ border: attendErrorColor && "2px solid green " }}
                 >
-                  SUBMIT
-                </button>
-              )}
-            </Link>
-          </form>
+                  <option value="">Select</option>
+                  <option value="traditional">Tradition Marriage</option>
+                  <option value="white">White Wedding</option>
+                  <option value="Both">Both</option>
+                </select>
+                <span
+                  style={{
+                    color: attendErrorColor ? "green" : "red",
+                    marginRight: "auto",
+                    fontSize: "12px",
+                    fontStyle: "italic",
+                    marginTop: "5px",
+                  }}
+                >
+                  {attendError}
+                </span>
+              </div>
+              <div>
+                <label style={{ textAlign: "center" }}>
+                  Will you be coming with a Spouse? If "YES" enter Spouse Name
+                  else leave blank
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter Spouse Name"
+                  value={spouse}
+                  onChange={(e) => spouseInput(e)}
+                />
+              </div>
+
+              <Link to="/dynamic">
+                {submitBtn && (
+                  <button
+                    type="submit"
+                    className="submit-btn"
+                    onClick={postUsers}
+                  >
+                    SUBMIT
+                  </button>
+                )}
+              </Link>
+            </form>
+          )}
         </div>
       )}
     </div>

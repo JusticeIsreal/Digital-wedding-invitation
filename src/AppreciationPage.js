@@ -5,7 +5,7 @@ import { Table } from "@mantine/core";
 import { useContext } from "react";
 import AppContext from "..//src/AppProvider";
 import { useEffect, useState } from "react";
-let site = "https://jenniferjustice2022.vercel.app/dynamic";
+let site = "https://jenniferjustice2022.vercel.app/";
 const myName = localStorage.getItem("hhh");
 
 function AppreciationPage({ users, list }) {
@@ -88,7 +88,7 @@ function AppreciationPage({ users, list }) {
           courtesy:The bride and Groom
         </p>
       </div>
-      {users.length === 0 ? (
+      {/* {users.length === 0 ? (
         <h1>Loading ...</h1>
       ) : (
         <Table>
@@ -113,7 +113,7 @@ function AppreciationPage({ users, list }) {
             ))}
           </tbody>
         </Table>
-      )}
+      )} */}
     </div>
   );
 }
