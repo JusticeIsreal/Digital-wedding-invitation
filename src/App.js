@@ -56,17 +56,13 @@ function App() {
     };
 
     setList([usersIn]);
+    window.location.reload(false);
   };
 
   const [list, setList] = useState(storedItems);
   //
- 
 
   // console.log(storedItems);
-
-  useEffect(() => {
-    return () => {};
-  }, []);
 
   console.log(storedItems);
   localStorage.setItem("list", JSON.stringify(list));
