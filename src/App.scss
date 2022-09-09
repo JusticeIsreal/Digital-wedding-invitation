@@ -94,11 +94,12 @@ $special-Color: #4c5eff;
       margin-right: auto;
       left: 0;
       right: 0;
-      // top: 20px;
-      top: 90%;
+      top: 20px;
+
       animation: bounce 4s linear infinite;
 
       @include responsive(bigphone) {
+        top: 90%;
       }
 
       button {

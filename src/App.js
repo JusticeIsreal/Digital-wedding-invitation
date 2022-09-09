@@ -3,6 +3,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppreciationPage from "./AppreciationPage";
 import Home from "./Home";
+import UsersTable from "./UsersTable";
 import AppContext from "..//src/AppProvider";
 import { useState, useEffect, useContext } from "react";
 let API = "https://justice-wedding-api.herokuapp.com/users";
@@ -44,7 +45,9 @@ function App() {
 
     axios
       .post(API, usersInputs)
-      .then((resp) => { window.location.reload(false)})
+      .then((resp) => {
+        window.location.reload(false);
+      })
       .catch((err) => {});
 
     let usersIn = {
@@ -58,7 +61,7 @@ function App() {
 
     setList([usersIn]);
   };
-  console.log(list);
+  // console.log(list);
 
   localStorage.setItem("list", JSON.stringify(list));
 
@@ -75,6 +78,10 @@ function App() {
           <Route
             path="/dynamic"
             element={<AppreciationPage users={people} list={storedItems} />}
+          ></Route>
+          <Route
+            path="/UsersTable"
+            element={<UsersTable users={people} />}
           ></Route>
         </Routes>
 

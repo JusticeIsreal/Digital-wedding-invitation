@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 let site = "https://jenniferjustice2022.vercel.app/dynamic";
 
 function AppreciationPage({ users, list }) {
-  const { name, phonenumber, attend, spouse } = useContext(AppContext);
-
   // usestate to manage QRcode
   const [src, setSrc] = useState("");
 
@@ -16,6 +14,8 @@ function AppreciationPage({ users, list }) {
     });
   }, []);
 
+
+  // 
   return (
     <div className="dynamicPage-container">
       <div className="dynamicimg">

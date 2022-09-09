@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import AppContext from "..//src/AppProvider";
 
 function Home({ postUsers, users, list }) {
-   
   const [ite, setIte] = useState([]);
   const {
     formshow,
@@ -39,11 +38,7 @@ function Home({ postUsers, users, list }) {
     return () => {
       btn();
     };
-  }, [name,  phonenumber, attend, gender]);
-
-
-
-  
+  }, [name, phonenumber, attend, gender]);
 
   return (
     <div className="iv-card">
@@ -52,6 +47,10 @@ function Home({ postUsers, users, list }) {
           <button onClick={showFrom}>CLICK HERE TO RESERVE A SEAT</button>
         )}
       </div>
+      <Link to="/usersTable">
+        {" "}
+        <button>click</button>
+      </Link>
       {formshow && (
         <div className="form">
           {list.length > 0 ? (
