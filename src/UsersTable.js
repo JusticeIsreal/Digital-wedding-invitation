@@ -1,7 +1,7 @@
 import { Table } from "@mantine/core";
 
 function UsersTable({ users }) {
-  const rows = users.map((element,index) => (
+  const rows = users.map((element, index) => (
     <tr key={index}>
       <td>{element.name}</td>
       <td>{element.phoneNumber}</td>
@@ -12,6 +12,7 @@ function UsersTable({ users }) {
   ));
   return (
     <div>
+      {users.length}
       <Table>
         <thead>
           <tr>

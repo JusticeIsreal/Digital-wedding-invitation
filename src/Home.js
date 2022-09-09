@@ -1,11 +1,11 @@
 import "./App.css";
 import { FaTimes } from "react-icons/fa";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect} from "react";
 import { Link } from "react-router-dom";
 import AppContext from "..//src/AppProvider";
 
 function Home({ postUsers, users, list }) {
-  const [ite, setIte] = useState([]);
+
   const {
     formshow,
     showFrom,
@@ -47,10 +47,7 @@ function Home({ postUsers, users, list }) {
           <button onClick={showFrom}>CLICK HERE TO RESERVE A SEAT</button>
         )}
       </div>
-      <Link to="/usersTable">
-        {" "}
-        <button>click</button>
-      </Link>
+
       {formshow && (
         <div className="form">
           {list.length > 0 ? (

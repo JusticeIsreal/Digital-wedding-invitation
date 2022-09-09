@@ -1,6 +1,4 @@
 import Qrcode from "qrcode";
-import { useContext } from "react";
-import AppContext from "..//src/AppProvider";
 import { useEffect, useState } from "react";
 let site = "https://jenniferjustice2022.vercel.app/dynamic";
 
