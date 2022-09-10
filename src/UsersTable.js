@@ -10,9 +10,18 @@ function UsersTable({ users }) {
       <td>{element.spouse}</td>
     </tr>
   ));
+
+  let trad = users.filter((person) => person.attend === "traditional");
+  let white = users.filter((person) => person.attend === "white");
+  let both = users.filter((person) => person.attend === "Both");
   return (
     <div>
-      {users.length}
+      <p>
+        <b>{users.length}</b> attendees registered online
+      </p>
+      <p>{trad.length} would be attending only the traditional wedding</p>
+      <p>{white.length} would be attending only the white wedding</p>
+      <p>{both.length} wwould be attending the both</p>
       <Table>
         <thead>
           <tr>
