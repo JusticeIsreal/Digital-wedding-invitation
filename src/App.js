@@ -1,4 +1,4 @@
-import "./App.css";
+
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppreciationPage from "./AppreciationPage";
@@ -113,7 +113,7 @@ function App() {
             fontSize: "10px",
           }}
         >
-          Designed by Justice Agbonma <br/> Justiceyba@gmail.com :
+          Designed by Justice Agbonma <br /> Justiceyba@gmail.com :
         </p>
         <a
           href="Tel:+2348104015180"

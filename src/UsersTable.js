@@ -1,8 +1,8 @@
 import { Table } from "@mantine/core";
-import Api from "./Api"
+import {Link} from "react-router-dom" 
 
 function UsersTable({ users }) {
-  const rows = Api.map((element, index) => (
+  const rows = users.map((element, index) => (
     <tr key={index}>
       <td>{element.name}</td>
       <td>{element.phoneNumber}</td>
@@ -20,6 +20,7 @@ function UsersTable({ users }) {
 
   return (
     <div>
+      <Link to="/Persons"><button>SEARCH</button></Link>
       <p>
         <b>{users.length}</b> attendees registered online
       </p>
