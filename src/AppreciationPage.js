@@ -12,8 +12,7 @@ function AppreciationPage({ users, list }) {
     });
   }, []);
 
-
-  // 
+  //
   return (
     <div className="dynamicPage-container">
       <div className="dynamicimg">
@@ -74,6 +73,8 @@ function AppreciationPage({ users, list }) {
         >
           courtesy:The bride and Groom
         </p>
+
+      
       </div>
       {/* {users.length === 0 ? (
         <h1>Loading ...</h1>

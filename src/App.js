@@ -104,6 +104,29 @@ function App() {
           Designed by Justice : <a href="Tel:+2348104015180">+234 8104015180</a>
           :::: Ajistechnology@gmail.com
         </p> */}
+        <p
+          style={{
+            display: "flex",
+            textAlign: "center",
+            justifyContent: "center",
+            fontStyle: "italic",
+            fontSize: "10px",
+          }}
+        >
+          Designed by Justice Agbonma <br/> Justiceyba@gmail.com :
+        </p>
+        <a
+          href="Tel:+2348104015180"
+          style={{
+            display: "flex",
+            textAlign: "center",
+            justifyContent: "center",
+            fontStyle: "italic",
+            fontSize: "10px",
+          }}
+        >
+          +234-8104015180
+        </a>
       </div>
     </Router>
   );
