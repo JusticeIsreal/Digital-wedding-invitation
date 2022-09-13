@@ -79,12 +79,12 @@ function App() {
             path="/dynamic"
             element={<AppreciationPage users={people} list={storedItems} />}
           ></Route>
-          <Route
+          {/* <Route
             path="/UsersTable"
             element={<UsersTable users={people} />}
-          ></Route>
+          ></Route> */}
         </Routes>
-
+        <UsersTable users={people} />
         {/* <p
           style={{
             color: "white",
