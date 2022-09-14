@@ -84,7 +84,7 @@ function App() {
             element={<UsersTable users={people} />}
           ></Route> */}
         </Routes>
-        <UsersTable users={people} />
+        {/* <UsersTable users={people} /> */}
         {/* <p
           style={{
             color: "white",

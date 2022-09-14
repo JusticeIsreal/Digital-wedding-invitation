@@ -1,19 +1,9 @@
 import { Table } from "@mantine/core";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function UsersTable({ users }) {
   const [search, setSearch] = useState(" ");
-  const rows = users.map((element, index) => (
-    <tr key={index}>
-      <td>{element.name}</td>
-      <td>{element.phoneNumber}</td>
-      <td>{element.attend}</td>
-      <td>{element.seat}</td>
-      <td>{element.spouse}</td>
-      <td>{element.date_created}</td>
-    </tr>
-  ));
 
   let trad = users.filter((person) => person.attend === "traditional");
   let white = users.filter((person) => person.attend === "white");
@@ -33,7 +23,6 @@ function UsersTable({ users }) {
       <p>{trad.length} would be attending only the traditional wedding</p>
       <p>{white.length} would be attending only the white wedding</p>
       <p>{both.length} wwould be attending the both</p>
-      {/* <p>{spouse.length} wwould be attending the both</p> */}
       <div
         style={{
           margin: "0 auto",
