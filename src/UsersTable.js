@@ -1,13 +1,14 @@
 import { Table } from "@mantine/core";
 // import { Link } from "react-router-dom";
 import { useState } from "react";
+import Data from "./Data"
 
 function UsersTable({ users }) {
   const [search, setSearch] = useState(" ");
 
-  let trad = users.filter((person) => person.attend === "traditional");
-  let white = users.filter((person) => person.attend === "white");
-  let both = users.filter((person) => person.attend === "Both");
+  let trad = Data.filter((person) => person.attend === "traditional");
+  let white = Data.filter((person) => person.attend === "white");
+  let both = Data.filter((person) => person.attend === "Both");
 
   return (
     <div
@@ -18,7 +19,7 @@ function UsersTable({ users }) {
       }}
     >
       <p>
-        <b>{users.length}</b> attendees registered online
+        <b>{Data.length}</b> attendees registered online
       </p>
       <p>{trad.length} would be attending only the traditional wedding</p>
       <p>{white.length} would be attending only the white wedding</p>
@@ -57,26 +58,24 @@ function UsersTable({ users }) {
             </tr>
           </thead>
           <tbody>
-            {users
-              .filter((item) => {
-                if (item.name === "") {
-                  return item;
-                } else if (
-                  item.name.toLowerCase().includes(search.toLowerCase())
-                ) {
-                  return item;
-                }
-              })
-              .map((element, index) => (
-                <tr key={index}>
-                  <td>{element.name}</td>
-                  <td>{element.phoneNumber}</td>
-                  <td>{element.attend}</td>
-                  <td>{element.seat}</td>
-                  <td>{element.spouse}</td>
-                  <td>{element.date_created}</td>
-                </tr>
-              ))}
+            {Data.filter((item) => {
+              if (item.name === "") {
+                return item;
+              } else if (
+                item.name.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return item;
+              }
+            }).map((element, index) => (
+              <tr key={index}>
+                <td>{element.name}</td>
+                <td>{element.phoneNumber}</td>
+                <td>{element.attend}</td>
+                <td>{element.seat}</td>
+                <td>{element.spouse}</td>
+                <td>{element.date_created}</td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </div>

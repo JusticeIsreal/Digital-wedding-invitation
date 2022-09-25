@@ -155,9 +155,7 @@ $special-Color: #4c5eff;
           transform: scale(1);
         }
       }
-      @include responsive(bigphone) {
-        width: 600px;
-      }
+                 
       form {
         @include flexDisplay(center, center, column);
         background-color: rgb(1, 1, 0);

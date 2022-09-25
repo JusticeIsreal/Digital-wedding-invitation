@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppreciationPage from "./AppreciationPage";
@@ -79,10 +78,10 @@ function App() {
             path="/dynamic"
             element={<AppreciationPage users={people} list={storedItems} />}
           ></Route>
-          {/* <Route
+          <Route
             path="/UsersTable"
             element={<UsersTable users={people} />}
-          ></Route> */}
+          ></Route>
         </Routes>
         {/* <UsersTable users={people} /> */}
         {/* <p
