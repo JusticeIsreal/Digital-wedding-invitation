@@ -80,7 +80,7 @@ function App() {
           ></Route>
           <Route
             path="/UsersTable"
-            element={<UsersTable users={people} />}
+            element={<UsersTable Data={people} />}
           ></Route>
         </Routes>
         {/* <UsersTable users={people} /> */}
