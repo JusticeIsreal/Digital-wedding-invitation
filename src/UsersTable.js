@@ -1,9 +1,9 @@
 import { Table } from "@mantine/core";
 // import { Link } from "react-router-dom";
 import { useState } from "react";
-// import Data from "./Data"
+import Data from "./Data"
 
-function UsersTable({ Data }) {
+function UsersTable({  }) {
   const [search, setSearch] = useState(" ");
 
   let trad = Data.filter((person) => person.attend === "traditional");
