@@ -138,7 +138,7 @@ function FirstPage() {
         overflow: "hidden",
       }}
     >
-      <Fade>
+      <Fade arrows={false}>
         {fadeImage.map((fadeImage, index) => (
           <ImgDisplay key={index} {...fadeImage} />
         ))}
@@ -173,7 +173,14 @@ function FirstPage() {
         }}
       >
         <Link to="/home">
-          <button style={{ margin: "0 auto", padding: "10px" }}>
+          <button
+            style={{
+              margin: "0 auto",
+              padding: "10px",
+              fontWeight: "800",
+              color: "blue",
+            }}
+          >
             CLICK HERE TO RESERVE A SEAT
           </button>
         </Link>
@@ -197,7 +204,7 @@ function ImgDisplay({ img }) {
             borderRadius: "10px",
           }}
         >
-          <img src={img} style={{ width: "100%", borderRadius: "3px" }} />
+          <img src={img} style={{ width: "100%", borderRadius: "10px" }} />
         </div>
       </div>
     </>
@@ -223,10 +230,13 @@ function ImgDownload({ img, download }) {
           borderRadius: "3px",
         }}
       >
-        <img
-          src={img}
-          style={{ width: "100%", height: "100%", borderRadius: "3px" }}
-        />
+        <a href={download}>
+          {" "}
+          <img
+            src={img}
+            style={{ width: "100%", height: "100%", borderRadius: "3px" }}
+          />
+        </a>
       </div>
       <button style={{ width: "100px", marginTop: "auto" }}>
         <a href={download}>Download</a>
