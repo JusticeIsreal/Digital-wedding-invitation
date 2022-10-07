@@ -57,6 +57,7 @@ const Clock = ({ deadline }) => {
         <p style={{ fontSize: "30px" }}>{leading0(seconds)}</p>{" "}
         <p style={{ fontSize: "10px" }}>Seconds</p>
       </div>
+      <span style={{ fontSize: "13px", marginTop: "auto" }}>To Go !!!</span>
     </div>
   );
 };
