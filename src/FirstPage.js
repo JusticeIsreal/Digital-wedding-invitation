@@ -24,6 +24,12 @@ function FirstPage() {
         "https://res.cloudinary.com/isreal/image/upload/fl_attachment:JJ2022/prewed9_tgsaig.jpg",
     },
     {
+      id: 22,
+      img: "https://res.cloudinary.com/isreal/image/upload/v1665146673/IMG_4643_s4szdp.heic",
+      download:
+        "https://res.cloudinary.com/isreal/image/upload/fl_attachment:JJ2022/IMG_7749_focd5j.jpg",
+    },
+    {
       id: 3,
       img: "https://res.cloudinary.com/isreal/image/upload/v1665121720/IMG_7749_focd5j.jpg",
       download:
@@ -52,6 +58,12 @@ function FirstPage() {
       img: "https://res.cloudinary.com/isreal/image/upload/v1665121593/prewed6_rnuplp.jpg",
       download:
         "https://res.cloudinary.com/isreal/image/upload/fl_attachment:JJ2022/prewed6_rnuplp.jpg",
+    },
+    {
+      id: 70,
+      img: "https://res.cloudinary.com/isreal/image/upload/v1665146622/IMG_4635_aiqqnk.heic",
+      download:
+        "https://res.cloudinary.com/isreal/image/upload/fl_attachment:JJ2022/IMG_4635_aiqqnk.heic",
     },
     {
       id: 8,
@@ -166,12 +178,10 @@ function FirstPage() {
           display: "flex",
           padding: "15px 0",
           justifyContent: "center",
-            alignItems: "center",
+          alignItems: "center",
         }}
       >
-        {" "}
         <Link to="/home">
-          {" "}
           <button style={{ margin: "0 auto", padding: "10px" }}>
             CLICK HERE TO RESERVE A SEAT
           </button>
