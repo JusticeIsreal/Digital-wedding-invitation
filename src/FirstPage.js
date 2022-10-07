@@ -131,8 +131,8 @@ function FirstPage() {
   return (
     <div
       style={{
-        border: "5px solid goldenrod",
-        padding: "5px",
+        // border: "5px solid goldenrod",
+        // padding: "5px",
         borderRadius: "10px",
         // width: "100vw",
         overflow: "hidden",
@@ -194,7 +194,7 @@ function ImgDisplay({ img }) {
             backgroundColor: "whitesmoke",
             // border: "1px solid red",
             height: "410px",
-            borderRadius: "5px",
+            borderRadius: "10px",
           }}
         >
           <img src={img} style={{ width: "100%", borderRadius: "3px" }} />
