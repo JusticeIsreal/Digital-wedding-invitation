@@ -126,11 +126,6 @@ body {
     transform: scale(1);
   }
 }
-@media only screen and (min-width: 750px) {
-  .App .iv-card .form {
-    width: 600px;
-  }
-}
 .App .iv-card .form form {
   display: flex;
   justify-content: center;

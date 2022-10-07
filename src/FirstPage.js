@@ -1,4 +1,5 @@
 import React from "react";
+import Clock from "./Clock";
 import { Link } from "react-router-dom";
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
@@ -127,6 +128,8 @@ function FirstPage() {
         "https://res.cloudinary.com/isreal/image/upload/fl_attachment:JJ2022/IMG_7749_focd5j.jpg",
     },
   ];
+  // countdown
+  let deadline = "october, 19, 2022";
 
   return (
     <div
@@ -143,7 +146,10 @@ function FirstPage() {
           <ImgDisplay key={index} {...fadeImage} />
         ))}
       </Fade>
-      <h2 style={{ textAlign: "center" }}>JJ'2022</h2>
+      <h2 style={{ textAlign: "center" }}>
+        {" "}
+        <Clock deadline={deadline} />
+      </h2>
       <div
         style={{
           width: "350px",
