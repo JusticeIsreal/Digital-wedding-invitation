@@ -1,5 +1,6 @@
 import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import FirstPage from "./FirstPage";
 import AppreciationPage from "./AppreciationPage";
 import Home from "./Home";
 import UsersTable from "./UsersTable";
@@ -68,8 +69,9 @@ function App() {
     <Router>
       <div className="App" style={{ position: "relative" }}>
         <Routes>
+          <Route path="/" element={<FirstPage />}></Route>
           <Route
-            path="/"
+            path="/home"
             element={
               <Home users={people} postUsers={postUsers} list={storedItems} />
             }
