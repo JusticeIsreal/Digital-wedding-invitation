@@ -36,7 +36,6 @@ const Clock = ({ deadline }) => {
       style={{
         display: "flex",
         width: "350px",
-        // border: "1px solid red",
         margin: "0 auto",
         justifyContent: "center",
       }}
