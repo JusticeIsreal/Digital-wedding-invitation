@@ -5,6 +5,10 @@ import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 function FirstPage() {
+  // countdown
+  let deadline = "october, 19, 2023";
+
+  // downoad photo
   const fadeImage = [
     {
       id: 1,
@@ -128,8 +132,6 @@ function FirstPage() {
         "https://res.cloudinary.com/isreal/image/upload/fl_attachment:JJ2022/IMG_7749_focd5j.jpg",
     },
   ];
-  // countdown
-  let deadline = "october, 19, 2022";
 
   return (
     <div
