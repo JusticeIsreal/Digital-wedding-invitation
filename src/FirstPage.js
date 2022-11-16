@@ -178,16 +178,19 @@ function FirstPage() {
           alignItems: "center",
         }}
       >
-        <button
-          style={{
-            margin: "0 auto",
-            padding: "10px",
-            fontWeight: "800",
-            color: "blue",
-          }}
-        >
-          CLICK HERE TO RESERVE A SEAT
-        </button>
+        <Link to="/home">
+          {" "}
+          <button
+            style={{
+              margin: "0 auto",
+              padding: "10px",
+              fontWeight: "800",
+              color: "blue",
+            }}
+          >
+            CLICK HERE TO RESERVE A SEAT
+          </button>
+        </Link>
       </div>
     </div>
   );
